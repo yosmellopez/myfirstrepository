@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <!-- Buscar en el paquete de jpa las anotaciones para cargar algunas clases como Beans -->
+    <!-- Inyeccion de Depencia -->
+    <context:component-scan base-package="jpa"/>
+
+    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) JPA Java Persistence Api(Conjunto de Librerias con sus funcionalidades)-->
+    <!-- Se crea la clase que ejecuta todas las cosas en el ORM(Object Relational Mapping -> Mapeador de Objetos Relacionales)-->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="Citologia"/>
+    </bean>
+    
+    <!-- Para que Spring maneje las transacciones por ti-->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean> 
+    
+    <!-- Voy a utilizar transacciones en los metodos Anotados con @Transaccional-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!-- Voy a utilizar transacciones en los metodos Anotados con @Transaccional-->
+    <!-- Bean es una clase que contiene atributos privados y metodos publicos (Gets y Sets) y un constructor por defecto-->
+    <!-- Constructor por defecto: public Nombre de la clase (){}-->
+    <bean id="mapeadorObjetos" class="utiles.MapeadorObjetos"/>
+    <bean id="servicioInicio" class="utiles.ServicioInicio"/>
+    <bean id="encriptador" class="utiles.EncriptadorContrasena"/>
+    <bean id="handlerLogout" class="utiles.ManejadorLogout"/>
+    <bean id="manejadorAutenticacion" class="utiles.AutenticacionFallida">
+        <property name="defaultFailureUrl" value="/login.htm?error=true"/>
+    </bean>
+    <bean id="manejadorExito" class="utiles.AutenticacionExitosa"/>
+    
+    <!-- Saves a locale change using a cookie -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+    <!-- Application Message Bundle -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/mensajes_es"/>
+        <property name="cacheSeconds" value="0"/>
+    </bean>
+    
+    <!--    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:org/springframework/security/messages_es_ES"/>
+        <property name="cacheSeconds" value="0"/>
+    </bean>-->
+    
+</beans>

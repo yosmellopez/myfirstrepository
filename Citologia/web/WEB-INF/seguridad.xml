@@ -1,0 +1,46 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+    
+    <!-- Archivo que es leido por el filtro para verifcar algunos elementos -->
+    
+    <!-- Acceso a las paginas o las rutas  -->
+    <http use-expressions="true" access-denied-page="/*/denegado.htm">
+        <intercept-url pattern="/admin/**" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/usuario/**" access="hasAnyRole('Administrador','Secretaria')"/>
+        <intercept-url pattern="/patologo/**" access="hasAnyRole('Administrador','Secretaria')"/>
+        <intercept-url pattern="/*/index.htm" access="hasAnyRole('Administrador','Secretaria')"/>
+        <intercept-url pattern="/*/usuarios.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/*/trazas.htm" access="hasAnyRole('Administrador')"/>
+        <intercept-url pattern="/*/pacientes.htm" access="hasAnyRole('Secretaria')"/>
+        <intercept-url pattern="/*/tecnicos.htm" access="hasAnyRole('Secretaria')"/>
+        <intercept-url pattern="/*/inicio.htm" access="hasAnyRole('Administrador','Secretaria')"/>
+        <intercept-url pattern="/perfil.htm" access="hasAnyRole('Administrador','Secretaria')"/>
+        
+        <!-- Autenticacion -->
+        <!-- Donde esta formulario para iniciar sesion -->
+        <!-- Donde esta formulario para iniciar sesion -->
+        <form-login login-page="/login.htm" authentication-success-handler-ref="manejadorExito" authentication-failure-handler-ref="manejadorAutenticacion" default-target-url="/inicio.htm"/>
+        
+        <!-- Salida de Sesion -->
+        <logout delete-cookies="JSESSIONID" success-handler-ref="handlerLogout" logout-url="/salir.htm"/>
+    </http>
+    
+    <!-- Proveedores de Autenticacion -->
+    <!-- Proveedores de Autenticacion son los que dicen de donde voy a sacar los usuarios-->
+    <authentication-manager>
+        <!-- Buscar el usuario en la base de datos -->
+        <authentication-provider user-service-ref="servicioInicio">
+            <!-- Como se codifican las contrasenas -->
+            <password-encoder ref="encriptador">
+                <!-- Como cadena aleatoria para que la encriptacion quede mejor -->
+                <salt-source user-property="usuario"/>
+            </password-encoder>
+        </authentication-provider>
+    </authentication-manager>
+    
+</beans:beans>  

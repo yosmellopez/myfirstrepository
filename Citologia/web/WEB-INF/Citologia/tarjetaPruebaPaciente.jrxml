@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2016-01-08T19:58:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tarjetaPruebaPaciente" pageWidth="895" pageHeight="900" whenNoDataType="AllSectionsNoDetail" columnWidth="855" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42c76859-bbf7-4388-901f-d030b43047d2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Transparent" forecolor="#B89F7D" backcolor="#70A9C6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Transparent" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="tarjeta" class="entidades.TarjetaPrueba" isForPrompting="false">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="responsables" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="553" y="6" width="300" height="64" uuid="77afb8aa-5936-455c-a616-237b3e167f2a"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="6" width="460" height="33" uuid="d1456985-5f71-4f5e-8789-b90ba2242d46"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MINISTERIO DE SALUD PÚBLICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="45" width="460" height="22" uuid="0615de43-2c06-4494-97e2-2267724bf538"/>
+				<text><![CDATA[Hospital Ernesto Guevara de la Serna Las Tunas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="20" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="584" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="150" width="420" height="30" uuid="fbfd782d-eb45-4058-a74a-f24ef62b36f8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="1" width="419" height="29" uuid="fd4fc20f-f480-467e-b0fc-13541bb070f7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[xxxxxXXXXX       ANTECEDENTES      XXXXXxxxxx]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="140" y="0" width="140" height="50" uuid="4fcd588c-d32d-4616-9d46-a81034b4fe56"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="57973068-4ec1-4964-9251-8de3f2a03ed5"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[2DO APELLIDO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="375a672e-a49e-4384-8e43-db032e7d68ed"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getSegundoApellido()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="280" y="0" width="140" height="50" uuid="e151cd13-b408-4ee0-83f3-48b768612aa8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="5148b483-0958-4229-a164-4dbf19d648e1"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[NOMBRE (S)]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="7ece1932-e450-494a-9381-fba254eeef08"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getNombre()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="420" y="0" width="140" height="50" uuid="8ed82e8f-1eec-4283-8883-d882d423d098"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="15f4c6b5-8198-4745-a5ff-71895e58452c"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[NUM. HIST.CLIN]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="69991ba3-f7e0-4419-8b0b-c7eef476d8a1"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getHistoriaClinica()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="560" y="0" width="140" height="50" uuid="874c17f7-d137-4999-8189-2b8e7a8b5c00"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="c9e402e8-00a3-4719-acb1-2e9beca744d7"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[POLICLINICO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="bfd4c5aa-8ebd-44bc-a811-96232e4e2319"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getConsultorio().getNombre()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="700" y="0" width="153" height="50" uuid="6b22120f-8f39-44be-b2b4-aadd3942e80b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="119" height="19" uuid="909e9e40-b2dc-4a49-a276-a04584396200"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[DETECCON PRECOZ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="7" y="25" width="33" height="21" uuid="adcc42b3-4de1-4274-b36f-c497fecea5a9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Si]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="71" y="25" width="35" height="21" uuid="3090fd35-5a2e-4e53-9e41-d71e34b2dfdb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[No]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="41" y="25" width="32" height="21" uuid="2f7b70f8-8c31-43da-876e-98623f06b9e1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["X"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="111" y="26" width="32" height="21" uuid="ddc7088b-6ef4-47ac-bebb-df0fa929d1a6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["X"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="140" height="50" uuid="0cfa0f93-aa8a-49e6-90a6-c935ae046e5e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="d411e6cd-484d-453d-b07a-8a3efc217532"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[1ER APELLIDO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="c420ef66-3aa6-485e-9f86-1ca065e5e883"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getPrimerApellido()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="50" width="80" height="50" uuid="9ebe1837-2571-44a6-b014-d3140e89d208"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="79" height="19" uuid="f73cbd7a-5566-422c-bba6-3fbf1726cd1c"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[EDAD]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="78" height="29" uuid="d7b02bb1-77a3-4304-a6bb-bd98b87bda89"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getEdad()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="80" y="50" width="130" height="50" uuid="e2fc3c9a-f7b4-4a72-8c23-845a35bd5aa7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="2b2522ef-2176-4ce6-a65e-beed8430a74b"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[OCUPACION]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="128" height="29" uuid="5a24df05-0592-4048-accc-05a6b9a8fa57"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getOcupacion()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="210" y="50" width="210" height="50" uuid="987d7e09-d915-43cb-b6e3-25fc63d2082a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="100" height="19" uuid="c6014194-a079-408d-aa1e-3ee8d5b35987"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[AREA DE SALUD]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="207" height="29" uuid="c609e4b3-40f1-4007-a23a-9ca3cdffe7ef"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getConsultorio().getAreaSalud().getNombre()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="420" y="50" width="180" height="50" uuid="a920e62f-7791-4bb5-a0e6-0a88fb5f5a4f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="2" width="152" height="19" uuid="a5eaec2a-ae8e-4eb5-9704-bb03db23faa1"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[CONSULTA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="178" height="29" uuid="90430df4-8fe5-42cf-b7c7-dc9784c21d9c"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getConsulta()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="600" y="50" width="253" height="50" uuid="e18c8e2d-7566-4358-aa5d-70c543c4ee9f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="3" width="152" height="19" uuid="2facf548-96bf-4ac2-9e4d-be9680f52679"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[NUM.DE INDENTIDAD]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="d2e1cb9b-67bd-49d3-874d-4e4d81fdc3e8"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getCi()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="100" width="710" height="50" uuid="2a0d9c14-2659-4935-b3d6-80e089a76bb1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="79" height="19" uuid="474e8392-e72d-4616-8a32-e594abf444b2"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[DIRECCION]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="708" height="29" uuid="07a04925-7ea8-41fe-bcc5-ad9eba6089e2"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getDireccion()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="710" y="100" width="143" height="50" uuid="17d97c13-0c7a-425c-84d4-ca65813e14fe"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="79" height="19" uuid="6b2bada4-21a3-4b87-a5b1-97b75379a7fa"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[TELEFONO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="21" width="138" height="29" uuid="ee8b4262-62aa-4dcf-aafe-f6a1dc0c0be0"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPaciente().getTelefono()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="180" width="210" height="260" uuid="46ff9d32-6074-4c09-b69a-b3db0262c123"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="139" height="19" uuid="faa458ae-3d9c-465c-aac9-db326ceffd42"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Primera Relación]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="210" y="180" width="210" height="260" uuid="7a25ead2-c64c-4a8a-8119-0726fb34eb7c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="420" y="150" width="433" height="30" uuid="785040c1-4abd-48f3-9853-001238456e22"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="431" height="29" uuid="82d23f73-f431-4bde-8541-1e55e9de8623"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[xxxXXX      PRIMERA CITOLOGIA        XXXxxx]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="420" y="240" width="433" height="200" uuid="39854a8c-d757-475a-9410-89cafca8b1f0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="119" height="19" uuid="be72f044-13c6-4658-a823-efd97c496992"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Diagnóstico Final]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="420" y="180" width="433" height="60" uuid="b1aec83b-22ce-473b-a773-25a024527d1f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="34" y="6" width="129" height="19" uuid="13da5872-1312-4831-ad52-73aca9c247f8"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[FEC. TOMA. Muestra]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="233" y="6" width="127" height="19" uuid="f756082f-38ec-4f81-8e93-8ba2e46d6f7b"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[FEC. RESULT. Final]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="35" y="27" width="138" height="29" uuid="0434338b-6331-4079-a26b-28779825fb1a"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPrimeraCitologia().getFechaTomaMuestra()]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="234" y="27" width="138" height="29" uuid="2cdba199-0606-4d15-aeb3-c882fae5fe85"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{tarjeta}.getPrimeraCitologia().getFechaResultadoFinal()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="460" width="287" height="120" uuid="885990cd-c8a9-4d40-80e9-5e794d6de4b7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="159" height="19" uuid="937aefb9-3835-4230-9758-40ec7a8063b6"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Muestra Tomada Por:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="10" y="21" width="270" height="89" uuid="23146d2b-ca3f-4803-976c-c700054e4504"/>
+					<box topPadding="3" leftPadding="5"/>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[$P{responsables}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="287" y="460" width="286" height="60" uuid="c0674425-dd63-4d6a-ad92-9be62d94edc7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="573" y="460" width="280" height="120" uuid="b173cb06-3dd8-4000-a30c-8d517040c950"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="79" height="19" uuid="1793cd86-303c-437b-9fad-5bd9e20e3e09"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Tipo de Caso]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="287" y="520" width="286" height="60" uuid="dcdbbf3c-d944-4bd5-a5e6-a08ca5c04754"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="1" y="1" width="172" height="19" uuid="a07afa31-d456-447c-8642-f588a5b502a5"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[UNIDAD: Hospital ]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
