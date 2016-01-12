@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,6 +32,18 @@ public class TipoOperacion implements Serializable {
     @OneToMany(mappedBy = "tipoOperacion", fetch = FetchType.EAGER)
     @JsonSerialize(using = SerializadorTipoOperacion.class)
     private List<TipoOperacionRecurso> tipoOperacionRecursos;
+
+    public TipoOperacion() {
+    }
+
+    public TipoOperacion(Integer idTipoOperacion) {
+        this.idTipoOperacion = idTipoOperacion;
+    }
+
+    public TipoOperacion(Integer idTipoOperacion, String tipo) {
+        this.idTipoOperacion = idTipoOperacion;
+        this.tipo = tipo;
+    }
 
     public Integer getIdTipoOperacion() {
         return idTipoOperacion;
