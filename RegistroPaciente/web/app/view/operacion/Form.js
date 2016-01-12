@@ -41,7 +41,7 @@ Ext.define('Registro.view.operacion.Form', {
                             }]
                     }, {
                         xtype: 'fieldset',
-                        title: 'Otros Datos del Paciente',
+                        title: 'Otros Datos de la Operaci\u00f3n',
                         defaults: {
                             labelAlign: 'left',
                             labelWidth: 130,
@@ -71,6 +71,18 @@ Ext.define('Registro.view.operacion.Form', {
                                 autoSelect: false,
                                 emptyText: 'Seleccione Especialidad',
                                 displayTpl: new Ext.XTemplate('<tpl for="."><tpl if="especialidad.especialidad==undefined">{especialidad}<tpl else>{especialidad.especialidad}</tpl></tpl>')
+                            }, {
+                                xtype: 'combo',
+                                store: 'TiposOperaciones',
+                                name: 'tipoOperacion',
+                                fieldLabel: 'Tipo de Operaci\u00f3n',
+                                displayField: 'tipo',
+                                valueField: 'objeto',
+                                allowBlank: false,
+                                queryMode: 'local',
+                                forceSelection: true,
+                                autoSelect: false,
+                                emptyText: 'Seleccione Tipo de Operaci\u00f3n'
                             }, {
                                 xtype: 'datefield',
                                 format: 'd/m/Y',

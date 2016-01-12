@@ -12,6 +12,8 @@ Ext.define('Registro.plugins.GridSelector', {
     searchField: '',
     searchAttribute: '',
     pluginsSeleccion: false,
+    changeValue: false,
+    fnChangeValue: function () {},
     store: {},
     value: [],
     heigth: 230,
@@ -98,7 +100,6 @@ Ext.define('Registro.plugins.GridSelector', {
     createListTo: function (title) {
         var me = this;
         me.pluginsSeleccion = me.pluginsSeleccion === false ? [] : me.pluginsSeleccion;
-        console.log(me.columns);
         return Ext.create('Ext.grid.Panel', {
             submitValue: false,
             getSubmitData: function () {
@@ -156,6 +157,9 @@ Ext.define('Registro.plugins.GridSelector', {
     setValue: function (value) {
         if (value.length !== 0) {
             var me = this;
+            if (me.changeValue) {
+                value = me.fnChangeValue.call(me, value);
+            }
             me.storeTo.add(value);
             me.storeFrom.remove(me.storeTo.getRange());
         }

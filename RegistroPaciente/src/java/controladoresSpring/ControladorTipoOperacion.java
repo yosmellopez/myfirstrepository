@@ -23,16 +23,16 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 @Controller
 public class ControladorTipoOperacion {
-    
+
     @Autowired
     TipoOperacionJpaController jpaController;
-    
+
     @Autowired
     TipoOperacionRecursoJpaController controller;
-    
+
     @Autowired
     MapeadorObjetos mapeadorObjetos;
-    
+
     @RequestMapping(value = "/tipoOperacion.json", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView listarTipoOperacions(int start, int limit, String parametros) {
@@ -48,7 +48,7 @@ public class ControladorTipoOperacion {
         }
         return new ModelAndView(new MappingJackson2JsonView(), map);
     }
-    
+
     @RequestMapping(value = "/tipoOperacion.json", method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView insertarTipoOperacion(@RequestBody TipoOperacion objetoEntidad) {
@@ -64,17 +64,24 @@ public class ControladorTipoOperacion {
         map.put("lista", objetoEntidad);
         return new ModelAndView(new MappingJackson2JsonView(), map);
     }
-    
+
     @RequestMapping(value = "/tipoOperacion.json/{idTipoOperacion}", method = RequestMethod.PUT)
     @ResponseBody
     public ModelMap actualizarTipoOperacion(@PathVariable int idTipoOperacion, @RequestBody TipoOperacion objetoEntidad) {
         TipoOperacion objetoBD = jpaController.actualizarEntidad(idTipoOperacion, objetoEntidad);
+        List<TipoOperacionRecurso> tipoOperacionRecursos = objetoEntidad.getTipoOperacionRecursos();
+        for (TipoOperacionRecurso tipoOperacionRecurso : tipoOperacionRecursos) {
+            tipoOperacionRecurso.setTipoOperacion(objetoEntidad);
+            tipoOperacionRecurso.crearClavePrimaria();
+            controller.actualizarEntidad(tipoOperacionRecurso.getOperacionRecursoPK(), tipoOperacionRecurso);
+        }
+        objetoBD.setTipoOperacionRecursos(tipoOperacionRecursos);
         ModelMap map = new ModelMap();
         map.put("success", true);
         map.put("lista", objetoBD);
         return map;
     }
-    
+
     @RequestMapping(value = "/tipoOperacion.json/{idTipoOperacion}", method = RequestMethod.DELETE)
     @ResponseBody
     public ModelMap eliminarTipoOperacion(@PathVariable int idTipoOperacion) {
@@ -83,7 +90,7 @@ public class ControladorTipoOperacion {
         map.put("success", true);
         return map;
     }
-    
+
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ModelAndView tratarExcepcion(Exception e) {
@@ -100,7 +107,7 @@ public class ControladorTipoOperacion {
         modelMap.put("success", false);
         return new ModelAndView(new MappingJackson2JsonView(), modelMap);
     }
-    
+
     private String tratarMensaje(JpaSystemException e) {
         String message = e.getMostSpecificCause().getMessage();
         if (message.contains("fk_formacion_cientifica_id_departamento")) {
@@ -111,5 +118,5 @@ public class ControladorTipoOperacion {
             return message;
         }
     }
-    
+
 }

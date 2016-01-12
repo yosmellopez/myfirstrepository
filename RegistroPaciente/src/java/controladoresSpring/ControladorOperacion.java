@@ -1,10 +1,19 @@
 package controladoresSpring;
 
 import clases.Operacion;
+import clases.Recurso;
+import clases.TarjetaEstiba;
+import clases.TipoOperacion;
+import clases.TipoOperacionRecurso;
 import clasesUtiles.MapeadorObjetos;
-import controladoresJpa.RolJpaController;
 import controladoresJpa.OperacionJpaController;
+import controladoresJpa.RecursoJpaController;
+import controladoresJpa.TarjetaEstibaJpaController;
+import controladoresJpa.TipoOperacionJpaController;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import javax.persistence.PersistenceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.jpa.JpaSystemException;
@@ -24,6 +33,15 @@ public class ControladorOperacion {
 
     @Autowired
     OperacionJpaController jpaController;
+
+    @Autowired
+    TipoOperacionJpaController operacionJpaController;
+
+    @Autowired
+    RecursoJpaController recursoJpaController;
+
+    @Autowired
+    TarjetaEstibaJpaController estibaJpaController;
 
     @Autowired
     MapeadorObjetos mapeadorObjetos;
@@ -47,11 +65,37 @@ public class ControladorOperacion {
     @RequestMapping(value = "/operacion.json", method = RequestMethod.POST)
     @ResponseBody
     public ModelAndView insertarOperacion(@RequestBody Operacion objetoEntidad) {
-        jpaController.insertarEntidad(objetoEntidad);
+        TipoOperacion tipoOperacion = objetoEntidad.getTipoOperacion();
+        TipoOperacion operacionTipoBD = operacionJpaController.find(tipoOperacion.getIdTipoOperacion());
+        List<TipoOperacionRecurso> tipoOperacionRecursos = operacionTipoBD.getTipoOperacionRecursos();
+        String mensaje = "";
+        boolean valido = true;
+        List<TarjetaEstiba> estibas = new ArrayList<>();
+        for (TipoOperacionRecurso tipoOperacionRecurso : tipoOperacionRecursos) {
+            Recurso recurso = tipoOperacionRecurso.getRecurso();
+            int cantidadRestanteRecurso = recursoJpaController.cantidadRestanteRecurso(recurso);
+            if (cantidadRestanteRecurso > tipoOperacionRecurso.getCantidad()) {
+                TarjetaEstiba estiba = new TarjetaEstiba(tipoOperacionRecurso.getCantidad(), new Date(), false, recurso);
+                estibas.add(estiba);
+            } else {
+                valido = false;
+                mensaje += "No se pudo insertar la operacion porque el recurso" + recurso.getNombre();
+            }
+        }
         ModelMap map = new ModelMap();
-        map.put("success", true);
-        map.put("lista", objetoEntidad);
-        return new ModelAndView(new MappingJackson2JsonView(), map);
+        if (valido) {
+            jpaController.insertarEntidad(objetoEntidad);
+            for (TarjetaEstiba estiba : estibas) {
+                estibaJpaController.insertarEntidad(estiba);
+            }
+            map.put("success", true);
+            map.put("lista", objetoEntidad);
+            return new ModelAndView(new MappingJackson2JsonView(), map);
+        } else {
+            map.put("success", false);
+            map.put("msg", mensaje);
+            return new ModelAndView(new MappingJackson2JsonView(), map);
+        }
     }
 
     @RequestMapping(value = "/operacion.json/{idOperacion}", method = RequestMethod.PUT)

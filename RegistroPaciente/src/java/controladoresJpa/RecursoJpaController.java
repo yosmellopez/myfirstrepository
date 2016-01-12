@@ -1,7 +1,13 @@
 package controladoresJpa;
 
 import clases.Recurso;
+import clases.TarjetaEstiba;
+import java.util.List;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,6 +39,20 @@ public class RecursoJpaController extends EntitiesRepository<Recurso, Integer> {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public int cantidadRestanteRecurso(Recurso recurso) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery cq = cb.createQuery();
+        Root from = cq.from(TarjetaEstiba.class);
+        cq.select(from).where(cb.equal(from.get("recurso"), recurso));
+        TypedQuery query = em.createQuery(cq);
+        List<TarjetaEstiba> tarjetaEstibas = query.getResultList();
+        int cantidad = 0;
+        for (TarjetaEstiba tarjetaEstiba : tarjetaEstibas) {
+            cantidad += tarjetaEstiba.getOperacion() ? tarjetaEstiba.getCantidad() : tarjetaEstiba.getCantidad() * -1;
+        }
+        return cantidad;
     }
 
 }

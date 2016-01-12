@@ -42,6 +42,8 @@ Ext.define('Registro.controller.OperacionControl', {
             store = this.getOperacionesStore();
             valores = basicForm.getValues();
             valores.paciente = form.getRegistroPaciente();
+            valores.pacienteFallecido = valores.pacienteFallecido === true ? true : false;
+            valores.cancerDetectado = valores.cancerDetectado === true ? true : false;
             record = Ext.create('Registro.model.Operacion', valores);
             store.add(record);
             win.setLoading('Insertando 0peracion...');
@@ -90,6 +92,8 @@ Ext.define('Registro.controller.OperacionControl', {
         if (bform.isValid()) {
             valores = form.getValues();
             record = form.getRecord();
+            valores.pacienteFallecido = valores.pacienteFallecido === true ? true : false;
+            valores.cancerDetectado = valores.cancerDetectado === true ? true : false;
             record.set(valores);
             store = this.getOperacionesStore();
             if (record.dirty)

@@ -15,12 +15,20 @@ Ext.define('Registro.view.tipoOperacion.Form', {
                 width: '100%'
             }, {
                 xtype: 'gridselectfield',
-                store: 'Recursos',
+                store: 'tiposRecursos',
                 fromTitle: 'Habilitados',
                 allowBlank: true,
                 toTitle: 'Seleccionados',
                 searchField: 'nombre',
                 name: 'tipoOperacionRecursos',
+                changeValue: true,
+                fnChangeValue: function (value) {
+                    elems = new Array();
+                    for (i = 0; i < value.length; i++) {
+                        elems.push({idRecurso: value[i].recurso.idRecurso, nombre: value[i].recurso.nombre, cantidadRestante: value[i].cantidad});
+                    }
+                    return elems;
+                },
                 height: 240,
                 flexFrom: 2,
                 flexTo: 2,
@@ -39,7 +47,7 @@ Ext.define('Registro.view.tipoOperacion.Form', {
                     }, {
                         header: 'Cantidad',
                         dataIndex: 'cantidadRestante',
-                        flex: 1,
+                        flex: 2,
                         editor: {
                             xtype: 'textfield',
                             name: 'cantidadRestante'

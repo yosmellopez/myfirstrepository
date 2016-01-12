@@ -8,6 +8,12 @@ Ext.define('Registro.controller.TipoOperacionControl', {
             selector: 'gridTipoOperacion'
         }],
     init: function () {
+        control = this.getController('RecursoControl');
+        store = control.getRecursosStore();
+        store.on('load', function (st, records) {
+            stTipo = Ext.create('Registro.store.Recursos', {storeId: 'tiposRecursos'});
+            stTipo.add(records);
+        });
         this.control({
             'gridTipoOperacion button[action=nuevo]': {
                 click: this.nuevo
@@ -59,6 +65,7 @@ Ext.define('Registro.controller.TipoOperacionControl', {
                         buttons: Ext.Msg.OK
                     });
                     win.close();
+                    Ext.getStore('tiposRecursos').rejectChanges();
                 },
                 failure: function (action) {
                     Ext.Msg.show({
@@ -111,6 +118,7 @@ Ext.define('Registro.controller.TipoOperacionControl', {
                         buttons: Ext.Msg.OK
                     });
                     win.close();
+                    Ext.getStore('tiposRecursos').rejectChanges();
                 },
                 failure: function (action) {
                     store.rejectChanges();

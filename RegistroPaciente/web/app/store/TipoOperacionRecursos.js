@@ -1,9 +1,9 @@
-Ext.define('Registro.store.OperacionRecursos', {
+Ext.define('Registro.store.TipoOperacionRecursos', {
     extend: 'Ext.data.Store',
     autoLoad: true,
     storeId: 'operacionRecursos_id',
     pageSize: 20,
-    model: 'Registro.model.OperacionRecurso',
+    model: 'Registro.model.TipoOperacionRecurso',
     proxy: {
         type: 'rest',
         url: 'operacionRecurso.json',
