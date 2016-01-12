@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3100930966">
+    <data-source source="LOCAL" name="SQLite - Prueba" uuid="d1f83801-2541-4b4f-a71b-2b5393cddde8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/web/WEB-INF/clasePractica.db</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/../../Programacion/Java/Librerias JetBrains/SQlite/sqlite-jdbc-3.8.11.2.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>

@@ -20,17 +20,24 @@ Ext.define('Registro.view.especialista.GridEspecialista', {
             }, {
                 header: 'Grupo',
                 dataIndex: 'grupo',
-                flex: 2,
+                flex: 1,
                 renderer: function (obj) {
                     return obj.grupo;
                 }
             }, {
                 header: 'Especialidad',
                 dataIndex: 'especialidad',
-                flex: 2,
+                flex: 1,
                 renderer: function (obj) {
                     return obj.especialidad;
                 }
+            }, {
+                xtype: 'booleancolumn',
+                header: 'Disponible',
+                dataIndex: 'disponible',
+                flex: 1,
+                trueText: 'Si',
+                falseText: "No"
             }];
         this.dockedItems = [//Elementos acoplados al propio control
             {

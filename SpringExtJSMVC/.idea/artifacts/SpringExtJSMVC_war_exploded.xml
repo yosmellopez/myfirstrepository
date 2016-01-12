@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringExtJSMVC:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringExtJSMVC_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SpringExtJSMVC/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringExtJSMVC" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Aspectos" />
+          <element id="library" level="application" name="Hibernate 5.0.2" />
+          <element id="library" level="application" name="Jackson 2.5.3" />
+          <element id="library" level="application" name="Spring Data JPA 1.9" />
+          <element id="library" level="application" name="Spring Framework 4.2.2" />
+          <element id="library" level="application" name="SQLite Driver" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
