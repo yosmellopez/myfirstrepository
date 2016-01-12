@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2016-01-11T23:33:30 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="operacionesMes" pageWidth="900" pageHeight="800" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e6e0398-d6a2-49c1-8e74-565d9410d46a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="fecha" class="java.util.Date" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="especialidad" class="clases.Especialidad"/>
+	<field name="grupo" class="clases.Grupo"/>
+	<field name="paciente" class="clases.Paciente"/>
+	<field name="fechaOperacion" class="java.util.Date"/>
+	<field name="tipoOperacion" class="clases.TipoOperacion"/>
+	<field name="pacienteFallecido" class="java.lang.Boolean"/>
+	<field name="cancerDetectado" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<image>
+				<reportElement x="560" y="0" width="300" height="64" uuid="f0061eff-7c59-4449-8b50-c429318d6b29"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="540" height="33" uuid="d4aee24f-b0f1-456b-ade3-256da98f8572"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Operaciones Realizadas en el Mes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="1" y="53" width="59" height="22" uuid="2e411a96-3764-43a5-83de-a719b819ebcc"/>
+				<text><![CDATA[Mes:]]></text>
+			</staticText>
+			<textField pattern="MMMM, yyyy">
+				<reportElement style="SubTitle" mode="Transparent" x="80" y="53" width="140" height="22" forecolor="#666666" backcolor="#FFFFFF" uuid="71d894c7-fadd-446a-b1b2-706c61c0cfe8"/>
+				<box leftPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-10" y="90" width="880" height="1" uuid="5a0c5262-192e-4eb9-af63-e77cdb1bff92">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="120" height="40" uuid="07feb845-4449-4471-888a-aaf2b3e77446"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Especialidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="110" height="40" uuid="85010673-aca2-4c12-8785-de6a8a2a0b4e"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Grupo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="100" height="40" uuid="39a45eca-868f-4214-aa8f-7037938999c2"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha de Operación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="580" y="0" width="120" height="40" uuid="4612e3b5-ed11-4757-a347-885a876bade3"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Tipo de Operacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="0" width="250" height="20" uuid="595b4320-6407-405e-b55e-9a98bd665896"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="20" width="130" height="20" uuid="b9d83416-ba6e-4390-8935-f63116b62c98"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="20" width="120" height="20" uuid="7063ea83-65b9-4d94-913c-b749f445400f"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="700" y="0" width="80" height="40" uuid="2e8d0db1-4994-4d22-aeb4-41760cca1519"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cancer Detectado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="780" y="0" width="79" height="40" uuid="a1ecab14-efde-4914-bc5f-0e5055a2efde"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Paciente Fallecido]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="120" height="30" uuid="246f8df5-9f78-4c33-86c0-11044fe4f700"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{especialidad}.getEspecialidad()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="110" height="30" uuid="4de9f913-5c24-478d-84df-3d4c8504d3a0"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{grupo}.getGrupo()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="120" height="30" uuid="3750a158-86b2-4218-8f2c-f83ef55957eb"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{paciente}.getNombre()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="130" height="30" uuid="015b5372-5730-4b4e-a833-1914cb919f97"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{paciente}.getApellidos()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="780" y="0" width="79" height="30" uuid="84eef23d-3c72-4f23-96ea-3e7a1a3bb877"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pacienteFallecido}?"Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMM d, yyyy">
+				<reportElement x="480" y="0" width="100" height="30" uuid="b2d01a5e-8aa7-4754-a2b3-6c87b29d0d35"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechaOperacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="0" width="80" height="30" uuid="c68855c1-f74b-4c29-9838-255d3d0c68db"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cancerDetectado}?"Si":"No"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="0" width="120" height="30" uuid="1bd4b875-8922-4200-92dd-1ae41ca6b2b1"/>
+				<box leftPadding="5">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tipoOperacion}.getTipo()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="9a43a8ec-acbe-4565-805a-95ae32270ce7"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="437f64bb-1a0d-4263-8cfe-e7ddef9f8071"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="d4c3c28b-6c3f-400a-acbf-3c28a9155f22"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

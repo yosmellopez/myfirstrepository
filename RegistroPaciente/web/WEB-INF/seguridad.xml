@@ -1,0 +1,34 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+    
+    <http use-expressions="true" access-denied-page="">
+        <intercept-url pattern="/listaEspera.htm" access="hasAnyRole('Administrador','Técnico VDQ','VDQ')" />
+        <intercept-url pattern="/recursos.htm" access="hasAnyRole('Administrador')" />
+        <intercept-url pattern="/usuarios.htm" access="hasAnyRole('Administrador')" />
+        <intercept-url pattern="/pacientes.htm" access="hasAnyRole('Administrador')" />
+        <intercept-url pattern="/index.htm" access="hasAnyRole('Administrador','Técnico VDQ','VDQ')" />
+        <intercept-url pattern="/trazas.htm" access="hasAnyRole('Administrador')" />
+        <intercept-url pattern="/inicio.htm" access="hasAnyRole('Administrador','Técnico VDQ','VDQ')" />
+        <intercept-url pattern="/operaciones.htm" access="hasAnyRole('Administrador','Técnico VDQ','VDQ')" />
+        <intercept-url pattern="/perfil.htm" access="hasAnyRole('Administrador','Técnico VDQ','VDQ')" />
+        <form-login login-page="/inicioSesion.htm" login-processing-url="/iniciar_sesion" authentication-success-handler-ref="autenticacionExitosa" authentication-failure-handler-ref="autenticacionFallida" default-target-url="/inicio.htm"/>
+        <logout delete-cookies="JSESSIONID" logout-url="/salir.htm" success-handler-ref="manejadorLogout"/>
+    </http>
+    
+    <!--success-handler-ref="handlerLogout"-->  
+    <!--authentication-success-handler-ref="manejadorExito" authentication-failure-handler-ref="manejadorAutenticacion"--> 
+    
+    <authentication-manager>
+        <authentication-provider user-service-ref="inicioSesionService">
+            <password-encoder ref="encriptadorContrasena">
+                <!--<salt-source user-property="salt"/>-->
+            </password-encoder>
+        </authentication-provider>
+    </authentication-manager>
+    
+</beans:beans>  

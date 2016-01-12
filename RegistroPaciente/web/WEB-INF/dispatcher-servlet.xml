@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />  
+    <context:component-scan base-package="controladoresSpring"/>
+    
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="mapeadorObjetos"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+    </mvc:interceptors>-->
+    
+    <mvc:resources mapping="/*" location="/*" />
+    
+    <aop:aspectj-autoproxy/>
+    <bean id="myAspect" class="aspectos.PuntoEncuentroTraza"/> 
+    
+    <bean class="vistas.ContentNegociationResolvedorVista"> 
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json" />
+                <entry key="htm" value="text/html" />
+                <entry key="do" value="multipart/form-data" />
+            </map>
+        </property>
+        <property name="viewResolvers">
+            <list>
+                <bean id="jasperReportsViewResolver" class="org.springframework.web.servlet.view.jasperreports.JasperReportsViewResolver"> 
+                    <property name="viewClass" value="vistas.JasperReportsMultiFormatoView" /> 
+                    <property name="prefix" value="/WEB-INF/RegistroPaciente/" /> 
+                    <property name="suffix" value=".jrxml" /> 
+                </bean> 
+                <bean id="viewResolver"
+                      class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+                    <property name="prefix" value="/WEB-INF/vistas/" />
+                    <property name="suffix" value=".jsp" />
+                </bean>
+            </list>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <bean id="jsonView" name="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+                    <property name="objectMapper" ref="mapeadorObjetos"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    
+</beans>
