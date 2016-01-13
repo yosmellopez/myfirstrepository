@@ -35,6 +35,8 @@ public class SpecificationArgumentResolver implements HandlerMethodArgumentResol
     public Specification resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
         String parametro = webRequest.getParameter(parametrosParameterName);
         String dateFormat = webRequest.getParameter(dateFormatParameterName);
+
+
         boolean hasText = StringUtils.hasText(parametro);
         if (!hasText) {
             return null;
