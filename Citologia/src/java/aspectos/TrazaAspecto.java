@@ -126,13 +126,13 @@ public class TrazaAspecto {
 
     private String crearAccion(String metodo, String controlador) {
         if (metodo.contains("get") || metodo.contains("GET")) {
-            return "Listar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/"), controlador.indexOf("[.]"));
+            return "Listar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/") + 1, controlador.indexOf(".") > 0 ? controlador.indexOf(".") : controlador.length());
         } else if (metodo.contains("put") || metodo.contains("PUT")) {
-            return "Modificar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/"), controlador.indexOf("[.]"));
+            return "Modificar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/") + 1, controlador.indexOf(".") > 0 ? controlador.indexOf(".") : controlador.length());
         } else if (metodo.contains("post") || metodo.contains("POST")) {
-            return "Insertar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/"), controlador.indexOf("[.]"));
+            return "Insertar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/") + 1, controlador.indexOf(".") > 0 ? controlador.indexOf(".") : controlador.length());
         } else {
-            return "Eliminar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/"), controlador.indexOf("[.]"));
+            return "Eliminar " + controlador.toLowerCase().substring(controlador.lastIndexOf("/") + 1, controlador.indexOf(".") > 0 ? controlador.indexOf(".") : controlador.length());
         }
     }
 

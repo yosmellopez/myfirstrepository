@@ -77,7 +77,7 @@ Ext.define('Citologia.controller.SalaControlador', {
                 title: 'Confirmación',
                 msg: '¿Está seguro de que desea borrar el registro seleccionado?',
                 buttons: Ext.Msg.YESNO,
-                icon: Ext.MessageBox.WARNING,
+                icon: Ext.MessageBox.INFO,
                 scope: this,
                 width: 400,
                 fn: function (btn, ev) {

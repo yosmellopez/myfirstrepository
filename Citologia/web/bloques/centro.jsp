@@ -69,7 +69,7 @@
             </sec:authorize>
             <sec:authorize access="hasRole('Secretaria')">
                 <li class="piluku-dropdown dropdown" >
-                    <a href="#" title="Menú Secretaría" class="dropdown-toggle right-bar-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bars fa-1x"></i></a>
+                    <a href="#" title="Menú Secretaria" class="dropdown-toggle right-bar-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bars fa-1x"></i></a>
                     <ul class="dropdown-menu dropdown-piluku-menu animated zoomIn wow notification-drop neat_drop dropdown-right" data-wow-duration="300ms" role="menu">
                         <li>
                             <a href="<c:url value="/${role}/pacientes.htm"/>">
@@ -98,7 +98,7 @@
                     </ul>
                 </li>
                 <li class="piluku-dropdown dropdown" >
-                    <a href="#" title="Administración" class="dropdown-toggle right-bar-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-area-chart fa-1x"></i></a>
+                    <a href="#" title="Reportes Estadísticos" class="dropdown-toggle right-bar-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-area-chart fa-1x"></i></a>
                     <ul class="dropdown-menu dropdown-piluku-menu animated zoomIn wow notification-drop neat_drop dropdown-right" data-wow-duration="300ms" role="menu">
                         <li>
                             <a href="<c:url value="/${role}/reportePaciente.htm"/>">
@@ -127,7 +127,7 @@
                     </ul>
                 </li>
                 <li class="piluku-dropdown dropdown" >
-                    <a href="#" title="Menú Secretaría" class="dropdown-toggle right-bar-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon ti-bar-chart fa-1x"></i></a>
+                    <a href="#" title="Reportes Dinámicos" class="dropdown-toggle right-bar-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon ti-bar-chart fa-1x"></i></a>
                     <ul class="dropdown-menu dropdown-piluku-menu animated zoomIn wow notification-drop neat_drop dropdown-right" data-wow-duration="300ms" role="menu">
                         <li>
                             <a href="<c:url value="/${role}/estadisticaMensual.htm"/>">
@@ -157,7 +157,7 @@
                         <a href="<c:url value="/${role}/perfil.htm"/>"> <i class="ion-android-create"></i>Editar Perfil</a>
                     </li>
                     <li>
-                        <a href="<c:url value="/ayuda.pdf"/>"> <i class="ion-help"></i>Ayuda</a>
+                        <a href="<c:url value="/ayuda.pdf"/>" target="new"> <i class="ion-help"></i>Ayuda</a>
                     </li>
                     <li>
                         <a href="<c:url value="/salir.htm"/>" class="logout_button"><i class="ion-power"></i>Cerrar Sesión</a>

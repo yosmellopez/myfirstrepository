@@ -99,6 +99,8 @@ public class ControladorSala {
             return "No se puede eliminar este departamento porque contiene registros de formación científica.";
         } else if (message.contains("fk_postgrado_id_departamento")) {
             return "No se puede eliminar este departamento porque contiene postgrados.";
+        } else if (message.contains("fk_r9wthqcf6vgj9tiur5kllx6xr")) {
+            return "No se puede eliminar esta sala porque se está referenciada desde una cama.";
         } else {
             return message;
         }

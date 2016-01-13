@@ -58,24 +58,24 @@ Ext.define('Citologia.view.estadistica.GridEstadisticaMensual', {
         this.columns = [{
                 xtype: 'rownumberer'
             }, {
-                header: 'Area',
+                header: '\u00c1rea',
                 dataIndex: 'area',
                 flex: 1,
                 summaryRenderer: function () {
                     return 'Total: ';
                 }
             }, {
-                header: 'No Util',
+                header: 'No \u00datil',
                 dataIndex: 'noUtil',
                 flex: 1,
                 summaryType: 'sum'
             }, {
-                header: 'Negativo Celulas Malignas',
+                header: 'Negativo C\u00e9lulas Malignas',
                 dataIndex: 'negativo',
                 flex: 1,
                 summaryType: 'sum'
             }, {
-                header: 'Positivo Celulas Malignas',
+                header: 'Positivo C\u00e9lulas Malignas',
                 dataIndex: 'infectadas',
                 flex: 1,
                 summaryType: 'sum'

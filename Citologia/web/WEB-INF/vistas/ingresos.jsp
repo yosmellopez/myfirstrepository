@@ -9,8 +9,9 @@
         <title>Sistema de Gestión Citología | ${pagina}</title>
         <c:import url="/bloques/recursos.jsp"/>
         <script>
-            var vista = 'gridPaciente';
-            var componente = 'paciente.GridPaciente';
+            var vista = 'gridPacienteIngresado';
+            var componente = 'paciente.GridPacienteIngresado';
+            var mostrarBotonIngreso = true;
         </script>
         <script src="<c:url value="/${pagina}.js"/>"></script>
     </head>

@@ -21,7 +21,7 @@ Ext.define('Citologia.view.paciente.GridPacienteIngresado', {
                     text: 'Nuevo Paciente',
                     scale: 'medium',
                     action: 'nuevo',
-                    iconCls: 'paciente'
+                    iconCls: 'fa fa-plus fa-1x'
                 }, {
                     xtype: 'button',
                     text: 'Modificar Paciente',
@@ -39,7 +39,7 @@ Ext.define('Citologia.view.paciente.GridPacienteIngresado', {
                     text: 'Ingresar Paciente',
                     scale: 'medium',
                     action: 'ingresar',
-                    iconCls: 'eliminar'
+                    iconCls: 'fa fa-ambulance fa-1x'
                 }]
         }, {
             xtype: 'busquedaPaciente'

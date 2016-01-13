@@ -1,7 +1,7 @@
 Ext.application({
     name: 'Citologia',
     appFolder: '../app',
-    views: ['estadistica.GridEstadisticaMensual'],
+    views: ['estadistica.GridEstadisticaMensual', 'estadistica.ChartEstadisticaMensual'],
     stores: ['EstadisticasMensuales'],
     models: ['EstadisticaMensual'],
     launch: function () {
@@ -12,6 +12,14 @@ Ext.application({
                     xtype: 'panel',
                     items: [{
                             xtype: 'gridEstadisticaMensual'
+                        }, {
+                            xtype: 'panel',
+                            items: [{
+                                    flex: 1,
+                                    xtype: 'container',
+                                    layout: {type: 'vbox', align: 'stretch'},
+                                    items: [{region: 'center', xtype: 'chartEstadisticaMensual'}]
+                                }]
                         }]
                 }]
         });

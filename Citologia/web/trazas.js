@@ -57,6 +57,7 @@ Ext.onReady(function () {
                                 vtype: 'rangoFecha',
                                 fechaFinal: 'fin',
                                 labelWidth: 90,
+                                flex: 1,
                                 name: 'rangoIfecha'
                             }, {
                                 xtype: 'datefield',
@@ -65,11 +66,13 @@ Ext.onReady(function () {
                                 editable: false,
                                 fechaInicio: 'inicio',
                                 labelWidth: 90,
+                                flex: 1,
                                 fieldLabel: 'Fecha Final',
                                 name: 'rangoFfecha'
                             }, {
                                 xtype: 'textfield',
                                 fieldLabel: 'Usuario',
+                                flex: 1,
                                 name: 'likeLusuario.usuario',
                                 width: 210
                             }, {
@@ -88,6 +91,7 @@ Ext.onReady(function () {
                                 displayField: 'accion',
                                 valueField: 'accion',
                                 editable: false,
+                                flex: 1,
                                 queryMode: 'local',
                                 forceSelection: true,
                                 autoSelect: false,
@@ -102,16 +106,16 @@ Ext.onReady(function () {
                                     grid = form.up('grid');
                                     store = grid.getStore();
                                     values = form.getValues();
-                                    store.load({params: {parametros: Ext.encode(values)}, callback: function (r, o, s) {
-                                            if (!s) {
-                                                console.log(o.getResultSet());
-                                            }
-                                        }});
+                                    store.load({params: {parametros: Ext.encode(values)}});
                                 }
                             }, {
                                 text: 'Limpiar',
                                 scale: 'medium',
-                                iconCls: 'limpiar'
+                                iconCls: 'limpiar',
+                                handler: function (bot) {
+                                    form = bot.up('form');
+                                    form.getForm().reset();
+                                }
                             }]
                     }]
             }],

@@ -92,6 +92,8 @@ public class ControladorAreaSaud {
             return "No se puede eliminar este departamento porque contiene registros de formación científica.";
         } else if (message.contains("fk_postgrado_id_departamento")) {
             return "No se puede eliminar este departamento porque contiene postgrados.";
+        } else if (message.contains("fk_e72xemmdak0654msfpum97a4f")) {
+            return "No se puede eliminar esta área de salud porque se está referenciada desde un consultorio.";
         } else {
             return message;
         }

@@ -289,8 +289,18 @@ Ext.define('Citologia.controller.PacienteControl', {
         elementos = grid.getSelectionModel().getSelection();
         win = Ext.widget('aliasingresoadd');
         form = win.down('form');
-        form.loadRecord(elementos[0]);
-        win.show(boton);
-        win.setRegistro(elementos[0]);
+        record = elementos[0];
+        if (!record.get('ingresado')) {
+            form.loadRecord(record);
+            win.show(boton);
+            win.setRegistro(record);
+        } else {
+            Ext.Msg.show({
+                title: 'Informaci\u00f3n',
+                icon: Ext.Msg.INFO,
+                msg: 'El paciente ya esta ingresado',
+                buttons: Ext.Msg.OK
+            });
+        }
     }
 });

@@ -43,7 +43,7 @@
                 <li class="submenu <c:if test="${pagina=='pacientes'||pagina=='pruebas'||pagina=='ingresos'}">current</c:if>">
                         <a class="waves-effect waves-light" href="#piluku_premium">
                             <i class="fa fa-bars"></i>
-                            <span class="text">Menú Secretaría</span>
+                            <span class="text">Menú Secretaria</span>
                             <i class="chevron ti-angle-right"></i>
                         </a>
                         <ul class="list-unstyled" id="piluku_premium">

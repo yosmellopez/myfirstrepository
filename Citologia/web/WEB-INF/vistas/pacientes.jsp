@@ -11,6 +11,7 @@
         <script>
             var vista = 'gridPaciente';
             var componente = 'paciente.GridPaciente';
+            var mostrarBotonIngreso = true;
         </script>
         <script src="<c:url value="/${pagina}.js"/>"></script>
     </head>
