@@ -1,6 +1,6 @@
 Ext.define('Seleccion.controller.EntrevistaIndividualController', {
     extend: 'Ext.app.Controller',
-    views: ['entrevistaIndividual.GridEntrevistaIndividual', 'entrevistaIndividual.InsertarEntrevistaIndividual', 'entrevistaIndividual.ModificarEntrevistaIndividual', ],
+    views: ['entrevistaIndividual.GridEntrevistaIndividual', 'entrevistaIndividual.InsertarEntrevistaIndividual', 'entrevistaIndividual.ModificarEntrevistaIndividual', 'entrevistaIndividual.BusquedaEntrevistaIndividual'],
     stores: ['EntrevistasIndividuales', 'NivelesEscolares', 'Aspirantes', 'Convivencias', 'IntegracionesRevolucionarias'],
     models: ['EntrevistaIndividual', 'NivelEscolar', 'Aspirante', 'Convivencia', 'IntegracionRevolucionaria'],
     refs: [{

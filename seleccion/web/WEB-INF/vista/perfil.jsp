@@ -57,9 +57,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div><label>Nombre y Apellidos:  ${u.nombre}</label></div>
+                                    <div><label>Nombre:  ${u.nombre}</label></div>
+                                    <div><label>Apellidos:  ${u.apellidos}</label></div>
                                     <div><label>Usuario:  ${u.usuario}</label></div>
-                                    <div><label>Rol en el Sistema:  ${u.rol.rol}</label></div>
+                                    <div style="margin-bottom: 20px;"><label>Rol en el Sistema:  ${u.rol.rol}</label></div>
                                     <fieldset class="perfil" style="border: 1px solid #AAC3FB; min-height: 20px; width: 100%; margin: auto auto 10px; padding: 5px;color: #000;">
                                         <legend>Configuración de la Cuenta</legend>
                                 </div>

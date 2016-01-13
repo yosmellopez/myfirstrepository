@@ -2,6 +2,7 @@ package controlador;
 
 import controladorjpa.CronogramaCursoJpaController;
 import controladorjpa.TipoCursoJpaController;
+import java.util.HashMap;
 import java.util.List;
 import javax.persistence.PersistenceException;
 import modelo.Aspirante;
@@ -42,10 +43,17 @@ public class CronogramaCursoController {
     }
 
     @RequestMapping(value = "cronogramaCurso.json", method = RequestMethod.GET)
-    public ModelAndView listarCronogramaCurso() {
-        ModelMap modelMap = new ModelMap();
-        modelMap.put("lista", cronogramaCursoJpaController.listarTodos());
-        return new ModelAndView(new MappingJackson2JsonView(mapeadorObjetos), modelMap);
+    public ModelAndView listarCronogramaCurso(int start, int limit, String parametros, ModelMap map) {
+         if (parametros != null) {
+            HashMap hashMap = mapeadorObjetos.readValue(parametros, HashMap.class);
+            map.put("lista", cronogramaCursoJpaController.findWhereAND(hashMap));
+            map.put("total", cronogramaCursoJpaController.getCantidad());
+        } else {
+            map.put("success", true);
+            map.put("lista", cronogramaCursoJpaController.listarTodos(start, limit));
+            map.put("total", cronogramaCursoJpaController.getCantidad());
+        }
+        return new ModelAndView(new MappingJackson2JsonView(mapeadorObjetos), map);
     }
 
     @RequestMapping(value = "tipoCurso.json", method = RequestMethod.GET)

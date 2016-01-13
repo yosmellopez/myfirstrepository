@@ -14,6 +14,7 @@ public class CronogramaCursoJpaController extends RepositorioEntidades<Cronogram
 
     public CronogramaCursoJpaController() {
         super(CronogramaCurso.class);
+        orderBy = "idCronogramaCurso";
     }
 
     @Override

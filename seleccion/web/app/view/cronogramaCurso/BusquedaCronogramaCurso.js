@@ -1,6 +1,6 @@
 Ext.define('Seleccion.view.cronogramaCurso.BusquedaCronogramaCurso', {
     extend: 'Ext.form.Panel',
-    title: 'Buscar Aspirantes',
+    title: 'Buscar Cronograma Curso',
     alias: 'widget.busquedaCronogramaCurso',
     id: 'busquedaCronogramaCurso',
     collapsible: true,
@@ -10,60 +10,95 @@ Ext.define('Seleccion.view.cronogramaCurso.BusquedaCronogramaCurso', {
     collapsed: true,
     frame: true,
     titleCollapse: true,
-    defaults: {
-        labelAlign: 'top',
-        margin: '0 5 0 0',
-        flex: 1
-    },
     initComponent: function () {
         this.items = [{
                 xtype: 'fieldset',
                 title: 'Busqueda de Cronograma de Cursos',
                 layout: {type: 'hbox', defaultMargins: {right: 10}, align: 'stretchmax', stretchMaxPartner: 'busquedaAspirante'},
                 items: [{
-                        xtype: 'textfield',
-                        name: 'lugar',
-                        fieldLabel: 'Lugar',
-                        emptyText: 'Inserte el lugar del curso'
+                        xtype: 'container',
+                        flex: 1,
+                        margin: '0 10 0 0',
+                        layout: {
+                            type: 'anchor'
+                        },
+                        defaults: {
+                            anchor: '100%',
+                            labelWidth: 115
+                        },
+                        items: [{
+                                xtype: 'combo',
+                                store: 'TiposCursos',
+                                name: 'tipoCurso.idTipoCurso',
+                                fieldLabel: 'Tipo de Curso',
+                                displayField: 'tipoCurso',
+                                valueField: 'idTipoCurso',
+                                queryMode: 'local',
+                                emptyText: 'Seleccione el tipo de curso'
+                            }, {
+                                xtype: 'fieldset',
+                                title: 'Rango de fechas de Inicio',
+                                layout: {
+                                    type: 'anchor'
+                                },
+                                defaults: {
+                                    anchor: '100%'
+                                },
+                                items: [{
+                                        xtype: 'datefield',
+                                        name: 'rangoIfechaInicio',
+                                        fieldLabel: 'Rango Inicial',
+                                        emptyText: 'Seleccione rango inicial'
+                                    }, {
+                                        xtype: 'datefield',
+                                        name: 'rangoFfechaInicio',
+                                        fieldLabel: 'Rango Final',
+                                        emptyText: 'Seleccione rango final'
+                                    }]
+                            }]
                     }, {
-                        xtype: 'numberfield',
-                        name: 'capacidad',
-                        minValue: 1,
-                        fieldLabel: 'Capacidad',
-                        emptyText: 'Inserte la capacidad del curso'
-                    }, {
-                        xtype: 'combo',
-                        store: 'TiposCursos',
-                        name: 'tipoCurso',
-                        fieldLabel: 'Tipo de Curso',
-                        displayField: 'tipoCurso',
-                        valueField: 'idTipoCurso',
-                        queryMode: 'local',
-                        forceSelection: true,
-                        emptyText: 'Seleccione el tipo de curso'
-                    }, {
-                        xtype: 'datefield',
-                        name: 'fechaInicio',
-                        fieldLabel: 'Fecha de Inicio',
-                        emptyText: 'Seleccione la fecha de inicio',
-                        vtype: 'rangoFecha',
-                        fechaFinal: 'fechaFinal',
-                        itemId: 'fechaInicio'
-                    }, {
-                        xtype: 'datefield',
-                        name: 'fechaFin',
-                        vtype: 'rangoFecha',
-                        fechaInicio: 'fechaInicio',
-                        maxValue: new Date(),
-                        itemId: 'fechaFinal',
-                        fieldLabel: 'Fecha Fin',
-                        emptyText: 'Seleccione la fecha fin'
+                        xtype: 'container',
+                        flex: 1,
+                        layout: {
+                            type: 'anchor'
+                        },
+                        defaults: {
+                            anchor: '100%',
+                            labelWidth: 115
+                        },
+                        items: [{
+                                xtype: 'textfield',
+                                name: 'likeLlugar',
+                                fieldLabel: 'Lugar',
+                                emptyText: 'Inserte el lugar del curso'
+                            }, {
+                                xtype: 'fieldset',
+                                title: 'Rango de fechas de terminaci\u00f3n',
+                                layout: {
+                                    type: 'anchor'
+                                },
+                                defaults: {
+                                    anchor: '100%'
+                                },
+                                items: [{
+                                        xtype: 'datefield',
+                                        name: 'rangoIfechaFin',
+                                        fieldLabel: 'Rango Inicial',
+                                        emptyText: 'Seleccione rango inicial'
+                                    }, {
+                                        xtype: 'datefield',
+                                        name: 'rangoFfechaFin',
+                                        fieldLabel: 'Rango Final',
+                                        emptyText: 'Seleccione rango final'
+                                    }]
+                            }]
+
                     }]
             }];
         this.buttons = [{
                 text: 'Buscar',
                 scale: 'medium',
-                iconCls: 'buscar',
+                iconCls: 'fa fa-search fa-1x',
                 action: 'buscar'
             }, {
                 scope: this,

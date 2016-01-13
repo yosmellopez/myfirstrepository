@@ -30,6 +30,9 @@ Ext.define('Seleccion.controller.CronogramaCursoController', {
             },
             'insertarAspirantes button[action=insertarAspirante]': {
                 click: this.agregarAspirante
+            },
+            'gridCronogramaCurso button[action=buscar]': {
+                click: this.buscar
             }
         });
     },
@@ -243,5 +246,16 @@ Ext.define('Seleccion.controller.CronogramaCursoController', {
                 buttons: Ext.Msg.OK
             });
         }
+    },
+    buscar: function (bot) {
+        form = bot.up('form');
+        values = form.getValues();
+        grid = this.getGrid();
+        store = grid.getStore();
+        store.load({
+            params: {
+                parametros: Ext.encode(values)
+            }
+        });
     }
 });
