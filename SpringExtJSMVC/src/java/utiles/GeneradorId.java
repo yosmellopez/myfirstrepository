@@ -27,7 +27,6 @@ public class GeneradorId extends ObjectIdGenerator<Rol> {
 
     @Override
     public IdKey key(Object key) {
-        System.out.println(key);
         return new IdKey(Rol.class, null, key);
     }
 
