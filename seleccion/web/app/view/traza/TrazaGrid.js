@@ -77,7 +77,10 @@ Ext.onReady(function () {
                                     values = form.getValues();
                                     store.load({params: {parametros: Ext.encode(values)}});
                                 }
-                            }, {text: 'Limpiar', scale: 'medium', iconCls: 'fa fa-eraser fa-1-2x blue'}]
+                            }, {text: 'Limpiar', scale: 'medium', iconCls: 'fa fa-eraser fa-1-2x blue', handler: function (bot) {
+                                    form = bot.up('form');
+                                    form.getForm().reset();
+                                }}]
                     }]
             }],
         columns: [{xtype: 'rownumberer', width: 50}, {
