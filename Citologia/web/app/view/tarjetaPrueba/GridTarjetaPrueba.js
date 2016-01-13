@@ -35,15 +35,18 @@ Ext.define('Citologia.view.tarjetaPrueba.GridTarjetaPrueba', {
                     menu: [{
                             text: 'PDF',
                             accion: 'pdf',
-                            action: 'generar'
+                            action: 'generar',
+                            iconCls: 'fa fa-file-pdf-o'
                         }, {
                             text: 'Word',
                             accion: 'docx',
-                            action: 'generar'
+                            action: 'generar',
+                            iconCls: 'fa fa-file-word-o'
                         }, {
                             text: 'Excel',
                             accion: 'xlsx',
-                            action: 'generar'
+                            action: 'generar',
+                            iconCls: 'fa fa-file-excel-o'
                         }]
                 }]
         }, {
