@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2016-01-10T19:55:18 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Entrevista_Individual" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bcf2929-84da-4bf0-8aa9-8c620aa366e9">
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="residencias" whenResourceMissingType="Empty" uuid="d98f715e-e614-4def-aa65-29eb9e8b95d5">
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+		<field name="centroTrabajo" class="modelo.CentroTrabajo">
+			<fieldDescription><![CDATA[centroTrabajo]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Residencia" uuid="0ca477a9-465a-4fb0-ae06-720232a4c93f">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="aspirantes" class="modelo.Aspirante"/>
+	<field name="fechaEntrevista" class="modelo.EntrevistaIndividual"/>
+	<field name="numExpediente" class="modelo.EntrevistaIndividual"/>
+	<field name="ci" class="modelo.Aspirante"/>
+	<field name="financiamiento" class="modelo.EntrevistaIndividual"/>
+	<field name="nombreMadre" class="modelo.EntrevistaIndividual"/>
+	<field name="nombrePadre" class="modelo.EntrevistaIndividual"/>
+	<field name="estatura" class="modelo.EntrevistaIndividual"/>
+	<field name="colorPiel" class="modelo.EntrevistaIndividual"/>
+	<field name="colorOjos" class="modelo.EntrevistaIndividual"/>
+	<field name="sexo" class="modelo.Aspirante"/>
+	<field name="edad" class="modelo.Aspirante"/>
+	<field name="estadoCivil" class="modelo.EntrevistaIndividual"/>
+	<field name="numHijos" class="modelo.EntrevistaIndividual"/>
+	<field name="nivelEscolar" class="modelo.NivelEscolar"/>
+	<field name="siSmg" class="modelo.EntrevistaIndividual"/>
+	<field name="fechaSmg" class="java.lang.Date"/>
+	<field name="siInternacionalista" class="modelo.EntrevistaIndividual"/>
+	<field name="paisInternacionalista" class="modelo.EntrevistaIndividual"/>
+	<field name="procedenciaFar" class="modelo.EntrevistaIndividual"/>
+	<field name="procedenciaMinint" class="modelo.EntrevistaIndividual"/>
+	<field name="senasVisibles" class="modelo.EntrevistaIndividual"/>
+	<field name="integracionesRevolucionarias" class="modelo.IntegracionRevolucionaria"/>
+	<field name="telefono" class="modelo.EntrevistaIndividual"/>
+	<field name="direccion" class="modelo.Aspirante"/>
+	<field name="convivencia" class="modelo.EntrevistaIndividual"/>
+	<field name="entrevistaIndividualCentroTrabajos" class="java.util.List"/>
+	<field name="residencias" class="java.util.List"/>
+	<group name="Group1">
+		<groupHeader>
+			<band height="652">
+				<line>
+					<reportElement x="-19" y="10" width="595" height="1" forecolor="#666666" uuid="e778f25a-8fda-45eb-ba72-9ea58ec5e2d5"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="18" width="30" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="a4e8d0e0-423e-470d-b0db-e74ce6f63dfb"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[CI:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="42" y="18" width="138" height="21" uuid="6d15cc43-e0a5-438a-b737-5d1ed2253345"/>
+					<textFieldExpression><![CDATA[$F{ci}.getCi()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="190" y="19" width="100" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="2972515d-da08-4e64-abc2-c6a38998c398"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Financiamiento:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="300" y="19" width="138" height="21" uuid="b690ff09-ee20-40a0-8d58-f32c2637e0f8"/>
+					<textFieldExpression><![CDATA[$F{financiamiento}.getFinanciamiento()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="1" y="49" width="46" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="66f0db97-7acc-4fa8-b628-09ec524842ac"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Hijo de]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="48" width="138" height="21" uuid="04138a1e-1b02-4f3e-8ab7-1d0f55b11821"/>
+					<textFieldExpression><![CDATA[$F{nombreMadre}.getNombreMadre()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="193" y="48" width="20" height="21" uuid="fb2c7e3b-4ac0-421c-b08a-d3acff3d75a5"/>
+					<text><![CDATA[y]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="218" y="49" width="138" height="21" uuid="78b664a1-0523-4cf2-afe8-b3bfab6389f4"/>
+					<textFieldExpression><![CDATA[$F{nombrePadre}.getNombrePadre()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="1" y="80" width="59" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="8cbde7d3-f318-4de6-ab26-a687761f02a7"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Estatura:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="65" y="79" width="66" height="21" uuid="5693dd47-91d6-48ae-9cd8-3b661d823d29"/>
+					<textFieldExpression><![CDATA[$F{estatura}.getEstatura()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="292" y="79" width="79" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="6be1ef1a-275e-428a-b976-415a721a3ac2"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Color de Ojos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="218" y="79" width="66" height="21" uuid="03861c4d-7472-42ca-95db-af147cff0ff2"/>
+					<textFieldExpression><![CDATA[$F{colorPiel}.getColorPiel()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="137" y="78" width="79" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="e4ca7abb-9f81-491e-a600-33e7a088e399"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Color de Piel:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="372" y="78" width="66" height="21" uuid="586abaf3-47c7-43d8-80f5-eacf47dfddfe"/>
+					<textFieldExpression><![CDATA[$F{colorOjos}.getColorOjos()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="442" y="79" width="40" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="3fd11299-ec91-45b4-9440-ac12ef2ff1eb"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Sexo]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="485" y="78" width="70" height="21" uuid="d2e1aed2-84dd-4f12-83bc-c0f782bbf14d"/>
+					<textFieldExpression><![CDATA[$F{aspirantes}.getSexo()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="107" width="45" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="592ee356-2840-4b5e-bdb4-be00834e0fb0"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Edad:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="107" width="39" height="21" uuid="d604ed89-fb06-44d5-be5c-127ba5572574"/>
+					<textFieldExpression><![CDATA[$F{edad}.getEdad()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="104" y="107" width="80" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="f98c5a94-b485-4821-a6d5-38016cd019ce"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Estado Civil:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="354" y="106" width="60" height="21" uuid="a27c4661-631f-43d4-bdfc-06cb40bf4a09"/>
+					<textFieldExpression><![CDATA[$F{numHijos}.getNumHijos()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="293" y="106" width="60" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="4be400a6-6c85-4a3e-863a-7e9949bee431"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[No. Hijos:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="192" y="108" width="97" height="21" uuid="9b4664d0-fdd3-4b69-9766-76fa5d941f33"/>
+					<textFieldExpression><![CDATA[$F{estadoCivil}.getEstadoCivil()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="138" width="78" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="f84dcc1e-79df-4d8c-ba2f-2ec50eea998f"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Nivel Escolar:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="87" y="138" width="102" height="21" uuid="61f66e6f-9829-4a70-b81f-98cdd5c0e9c3"/>
+					<textFieldExpression><![CDATA[$F{nivelEscolar}.getNivelEscolar()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="138" width="78" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="a6dd6a32-c2be-4494-802e-44acd35ba119"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Pasó el SMG:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="420" y="138" width="40" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="81ea7cc0-a162-4b09-b773-0aa808b2ff3f"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="460" y="138" width="102" height="21" uuid="0eab8961-706d-40dd-854f-1330b9271d3b"/>
+					<textFieldExpression><![CDATA[$F{fechaSmg}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="3" y="168" width="117" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="540750b8-3f93-48f1-bb88-ce5cb8f4977a"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Si Internacionalista]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="183" y="168" width="47" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="92c63c7f-fa51-4ac4-9a8f-7434b0c937dd"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[País:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="235" y="167" width="102" height="21" uuid="d6228b5b-d3f0-4519-a170-0a09362fb967"/>
+					<textFieldExpression><![CDATA[$F{paisInternacionalista}.getPaisInternacionalista()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="199" width="117" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="c036a8cd-0e49-4403-909a-3dc3b2f058f1"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Procedencia FAR:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="170" y="199" width="117" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="005d34af-f0de-4cd8-ba1c-458e55a000df"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Procedencia MININT:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="323" y="199" width="91" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="15330a18-2951-4974-8067-00198f03dc24"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Señas Visibles:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="420" y="198" width="135" height="21" uuid="f17c9b60-8211-4160-b10f-fcd093da953a"/>
+					<textFieldExpression><![CDATA[$F{senasVisibles}.getSenasVisibles()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="3" y="235" width="157" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="d1072385-cfed-48f9-a121-4d04f75d5e94"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Integración Revolucionaria:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="165" y="234" width="158" height="21" uuid="918dbd92-7944-4269-b5fb-aee107c6b424"/>
+					<textFieldExpression><![CDATA[$F{integracionesRevolucionarias}.getIntegracionRevolucionaria()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="332" y="234" width="68" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="e72de16a-25a8-4551-a1b9-ea888da4210c"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Teléfono:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="409" y="233" width="135" height="21" uuid="414e50f3-0c53-470a-b157-d656f84634a2"/>
+					<textFieldExpression><![CDATA[$F{telefono}.getTelefono()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="268" width="104" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="8f017f02-4cb2-4e60-ab0a-0f716775b405"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Dirección Actual:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="267" width="435" height="21" uuid="f3c41313-56a4-493f-9c9b-6e2d479f7b32"/>
+					<textFieldExpression><![CDATA[$F{direccion}.getDireccion()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="290" y="140" width="91" height="21" uuid="a012a53c-9f9c-4d69-a0db-00ab637dc8d4"/>
+					<textFieldExpression><![CDATA[$F{siSmg}.getSiSmg()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="121" y="169" width="51" height="21" uuid="25c59118-f872-416a-ba02-4129ba4df455"/>
+					<textFieldExpression><![CDATA[$F{siInternacionalista}.getSiInternacionalista()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="120" y="198" width="41" height="21" uuid="25da7d3d-1c8b-400c-995b-7f2f6c9fbc35"/>
+					<textFieldExpression><![CDATA[$F{procedenciaFar}.getProcedenciaFar()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="290" y="200" width="31" height="21" uuid="d615809f-fd78-45ad-a82a-51223067bace"/>
+					<textFieldExpression><![CDATA[$F{procedenciaMinint}.getProcedenciaMinint()]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement x="3" y="461" width="390" height="91" uuid="be596eea-ccca-490c-b0ce-7b45914dbe91">
+						<property name="net.sf.jasperreports.export.headertoolbar.table.name" value="datos"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="convivencia" uuid="78759c90-9c3a-48d9-9d63-1a276086565d">
+							<parametersMapExpression><![CDATA[$F{residencias}]]></parametersMapExpression>
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+						</datasetRun>
+						<jr:column width="100" uuid="52636bd1-dbc6-4820-96f3-fda8ae2c8cce">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="30">
+								<staticText>
+									<reportElement x="7" y="5" width="93" height="21" uuid="e986a0a0-4f02-41a7-a2e6-b9291f20a280"/>
+									<text><![CDATA[Desde]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+						<jr:column width="100" uuid="380fae37-0000-4c09-aff2-632dc21c3232">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="30">
+								<staticText>
+									<reportElement x="4" y="5" width="95" height="21" uuid="cc740d2a-a3af-4359-a566-ba26ec343472"/>
+									<text><![CDATA[Hasta]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+						<jr:column width="190" uuid="d17d8e6d-355d-42da-83f8-a7e3abeaf3a8">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="30">
+								<staticText>
+									<reportElement x="4" y="5" width="181" height="21" uuid="36a6d228-7dc6-4690-bcc8-3e7d9a2e8b71"/>
+									<text><![CDATA[Dirección]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+				<componentElement>
+					<reportElement x="3" y="330" width="548" height="101" uuid="7798804c-4a33-436c-ada4-6b2f56564231"/>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="convivencia" uuid="16ab395d-5e1e-4a12-bc7c-bccd531843f7">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource($F{convivencia}.getConvivencias())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:column width="140" uuid="52636bd1-dbc6-4820-96f3-fda8ae2c8cce">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="40">
+								<staticText>
+									<reportElement x="7" y="5" width="131" height="21" uuid="e986a0a0-4f02-41a7-a2e6-b9291f20a280"/>
+									<text><![CDATA[Nombre y Apellidos]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+						<jr:column width="90" uuid="380fae37-0000-4c09-aff2-632dc21c3232">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="40">
+								<staticText>
+									<reportElement x="4" y="5" width="85" height="21" uuid="cc740d2a-a3af-4359-a566-ba26ec343472"/>
+									<text><![CDATA[Parentesco]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+						<jr:column width="40" uuid="70f6abb1-8179-46da-a4fd-5054aa6604a0">
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="40">
+								<staticText>
+									<reportElement x="5" y="3" width="31" height="21" uuid="dc2b347f-b559-479c-9ec7-e1afc7ea3c62"/>
+									<text><![CDATA[Edad]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+						<jr:column width="140" uuid="c7c4e6a3-fbb2-44c0-8193-e9a5bae3ff6b">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="40">
+								<staticText>
+									<reportElement x="9" y="5" width="121" height="21" uuid="383b99d4-f8f2-41da-8605-749c87c9976f"/>
+									<text><![CDATA[Centro Trabajo]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+						<jr:column width="140" uuid="c4ec2855-5c2a-41e5-b9a9-7c2749909bb8">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="40">
+								<staticText>
+									<reportElement x="2" y="4" width="131" height="21" uuid="b1e82e86-31dc-4222-bf6e-1b6d90e8b5a5"/>
+									<text><![CDATA[Escuela]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30"/>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+				<staticText>
+					<reportElement x="25" y="307" width="211" height="20" uuid="1f80a40c-f325-404f-ab05-93577bb65580"/>
+					<text><![CDATA[Personas que conviven con usted.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="437" width="271" height="21" uuid="39516459-b7e6-40c8-9ad7-8d5f08b9e66f"/>
+					<text><![CDATA[Lugar en los que ha vivido en los últimos 5 años.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="556" width="301" height="21" uuid="7dad21f6-9867-4fc9-a705-1faa2d3afc89"/>
+					<text><![CDATA[Centro de Trabajo en los últimos 5 años.]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement x="30" y="582" width="200" height="42" uuid="f0298239-aa21-461a-81a5-59c344412ae2"/>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="convivencia" uuid="2567b522-408b-45e1-b248-ee48a4aa5e78">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource($F{entrevistaIndividualCentroTrabajos})]]></dataSourceExpression>
+						</datasetRun>
+						<jr:column width="190" uuid="dfaa5410-3d85-4e10-877e-9ff3341136e8">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<jr:tableFooter height="30"/>
+							<jr:columnHeader height="30">
+								<staticText>
+									<reportElement x="8" y="6" width="182" height="21" uuid="812fd4a2-60db-4d46-858e-f911b55b9f6f"/>
+									<text><![CDATA[Nombre del Centro]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:columnFooter height="30"/>
+							<jr:detailCell height="30">
+								<textField>
+									<reportElement x="0" y="0" width="100" height="30" uuid="c019e5fb-fded-442a-97d6-01251c9302b5"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$F{centroTrabajo}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="45809024-9ef6-4072-bdf0-6bc7ab42a4c6"/>
+				<staticText>
+					<reportElement x="20" y="20" width="440" height="43" forecolor="#FFFFFF" uuid="2cbfd011-ade4-457e-bade-146095970911"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ENTREVISTA INDIVIDUAL]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="489" y="67" width="100" height="13" uuid="e37504f6-d313-44ef-851a-c3130f5de690"/>
+					<textFieldExpression><![CDATA[$F{fechaEntrevista}.getFechaEntrevista()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="47">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="33086ad5-3e60-4977-9b42-b41e66552fc9"/>
+			</line>
+			<textField>
+				<reportElement x="126" y="21" width="246" height="26" uuid="7b81111a-836f-4074-b22e-0f1102b56f15"/>
+				<textFieldExpression><![CDATA[$F{aspirantes}.getNombreCompleto()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="24" width="120" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="6342f7c5-f2e8-4a40-b568-fd01682cc2e8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre y Apellidos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="22" width="86" height="23" uuid="18ef8037-21c2-489b-9841-c36279d315fc"/>
+				<textFieldExpression><![CDATA[$F{numExpediente}.getNumExpediente()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="70">
+			<staticText>
+				<reportElement x="23" y="-24" width="397" height="18" uuid="54f63dd6-4ce9-4878-9652-44bc5595cca4"/>
+				<text><![CDATA[Certifico que toda la información brindada se ajusta a la verdad.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="3" width="108" height="67" uuid="d9a77853-ab10-4b66-86b5-97919b87791a"/>
+				<text><![CDATA[Firma:______________  Entrevistador:         Firma: _____________			]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="1ac410db-8e39-4a51-889e-9edb066d5fdd"/>
+				<textElement textAlignment="Right"/>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="d97234e2-03e5-4a03-a708-d1c7ed1bfd04"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

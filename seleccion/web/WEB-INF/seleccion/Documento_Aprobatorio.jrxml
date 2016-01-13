@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2016-01-10T20:25:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Documento_Aprobatorio" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78c74812-c8e2-4047-9303-92d27ef96f8b">
+	<parameter name="documentoAprobatorio" class="modelo.DocumentoAprobatorio"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="Group1">
+		<groupHeader>
+			<band height="243">
+				<line>
+					<reportElement x="-20" y="10" width="595" height="1" forecolor="#666666" uuid="df63eac1-289b-4d89-839f-4e50b21082e0"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="25" width="200" height="16" uuid="b023e832-dc47-46b1-8130-bb1348c9177e"/>
+					<text><![CDATA[Por este medio le informo que el candidato:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="208" y="23" width="192" height="21" uuid="7dc82135-0f1d-49e3-90c7-1a343146d561"/>
+					<textFieldExpression><![CDATA[$F{aspirantes}.getNombreCompleto()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="47" width="50" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="06ce1d74-983b-4fc7-abf2-0deca52bf935"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Aprobó:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="192" y="47" width="198" height="21" uuid="0e0309a5-c021-458d-b045-c6c5cb057d1b"/>
+					<text><![CDATA[el examen psicométrico realizado en fecha]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="400" y="48" width="101" height="23" uuid="767606da-8988-474b-8386-1bf3b32e32dd"/>
+					<textFieldExpression><![CDATA[$F{fechaExamen}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="87" width="90" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="4cfad5bf-571c-4228-b2e6-f514d6a1ec2d"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Diagnóstico:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="87" width="281" height="61" uuid="5be7d1c3-27d7-4f23-925d-4664c72a817e"/>
+					<textFieldExpression><![CDATA[$F{resumenDiagnostico}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="185" width="116" height="58" uuid="24015e3d-d641-4bb5-916c-5591b1a20eaf"/>
+					<text><![CDATA[Fdo.________________ Especialista. Agencia Nombre y Apellidos,    Firma y Cuño]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="60" y="47" width="121" height="21" uuid="9d298eb5-a976-4497-9b84-012702e6a353"/>
+					<textFieldExpression><![CDATA[$F{aprobado}.getAprobado()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="05e65540-e501-4514-995f-78d2b492d330"/>
+				<staticText>
+					<reportElement x="20" y="20" width="515" height="43" forecolor="#FFFFFF" uuid="a1088c87-dad5-4c41-a4c0-ae5492c74cf0"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DOCUMENTO APROBATORIO]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="47">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="4fdb815c-ce1b-4cd1-9a10-0a8e4feb1c6b"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="23" width="20" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="d2f24a87-39ef-49d5-acf7-646653bccfc3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[A:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="21" width="293" height="26" uuid="640e9e44-0e7c-4f24-9d65-632cbc9a9219"/>
+				<textFieldExpression><![CDATA[$F{destinatario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="f45cd921-6071-4a87-a9fd-c41364658e1d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="243762ea-23f1-4674-8300-b0065ad2b8b0"/>
+				<textElement textAlignment="Right"/>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

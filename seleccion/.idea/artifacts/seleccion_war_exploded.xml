@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="seleccion:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/seleccion_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="seleccion/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="seleccion" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Spring Framework 4.2.3.RELEASE" />
+          <element id="library" level="application" name="Spring Security 4.0.3.RELEASE" />
+          <element id="library" level="application" name="PostgreSQL 9.4" />
+          <element id="library" level="application" name="JSTL 1.2" />
+          <element id="library" level="application" name="Jackson Json 2.6.3" />
+          <element id="library" level="application" name="Hibernate 5.0.2" />
+          <element id="library" level="application" name="Aspectos" />
+          <element id="library" level="application" name="JUnit Test" />
+          <element id="library" level="application" name="Mockito" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2016-01-10T20:14:11 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Solicitud_Empleo" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45460b35-e869-40be-9a5a-d5ddf552b924">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="aspirante" class="Modelo.Aspirante"/>
+	<field name="causaSolicitud" class="java.lang.String"/>
+	<field name="fecha" class="java.util.Date"/>
+	<group name="Group1">
+		<groupHeader>
+			<band height="180">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="40" height="20" forecolor="#666666" backcolor="#E6E6E6" uuid="aa5f791b-77b2-4b01-a4e7-783cb5d285e8"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Yo:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="8e86aef1-0beb-485b-9d0c-7bf6b86d67b7"/>
+				</line>
+				<textField>
+					<reportElement x="43" y="-3" width="231" height="23" uuid="145c3e3e-c3ee-4bde-9bab-7e65e0e15b3f"/>
+					<textFieldExpression><![CDATA[$F{aspirante}.getNombre()+getApellidos()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="42" width="555" height="21" uuid="9416846f-8702-4000-993d-4a5484838e05"/>
+					<text><![CDATA[Hago solicitud de Empleo, para laborar en la Empresa, Agencia de Seguridad y Protección ESPCAP Las Tunas, porque:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="71" width="561" height="41" uuid="f9967f7f-045b-4262-8983-5aca4731c93f"/>
+					<textFieldExpression><![CDATA[$F{causaSolicitud}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="200" y="128" width="110" height="40" uuid="85704aa8-7b2e-4d25-8373-487af2edfadc"/>
+					<text><![CDATA[_____________	   firma Solicitante]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="58370e99-1feb-4d8c-9338-a35bed251b92"/>
+				<staticText>
+					<reportElement x="20" y="20" width="410" height="43" forecolor="#FFFFFF" uuid="03c45c8b-b49a-4427-87c8-4fe9665ec31b"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SOLICITUD DE EMPLEO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="479" y="63" width="97" height="17" uuid="f1fa12cc-af12-4445-80c5-078c573ca8c7"/>
+					<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="48c60526-f974-4ab7-8245-90b4ba36d19d"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="edb80c13-7e56-4ab5-b1ca-c9db2ebd6e6c"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="631e81cb-eb3c-48c0-91c8-b72bc8d5fa77"/>
+				<textElement textAlignment="Right"/>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
